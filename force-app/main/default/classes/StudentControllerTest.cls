@@ -20,10 +20,12 @@ private class StudentControllerTest {
     @IsTest
     static void testStudentsSorting() {
         //When
+        Test.startTest();
         List<Student__c> students = StudentController.getStudents();
+        Test.stopTest();
 
         //Then
-        //Assert that the students are sorted by Score__c in descending order
+        //Verify that the students are sorted by Score__c in descending order
         for (Integer i = 0; i < students.size() - 1; i++) {
             Assert.isTrue(
                 students[i].Score__c >= students[i + 1].Score__c,
@@ -35,16 +37,18 @@ private class StudentControllerTest {
     @IsTest
     static void testTopStudents() {
         //When
+        Test.startTest();
         List<Student__c> topStudents = StudentController.getTopStudents(5);
+        Test.stopTest();
 
         //Then
-        //Assert that the correct number of students is returned
+        //Verify that the correct number of students is returned
         Assert.areEqual(
             5,
             topStudents.size(),
             'Incorrect number of top students returned'
         );
-        //Assert that the students are sorted by Score__c in descending order
+        //Verify that the students are sorted by Score__c in descending order
         for (Integer i = 0; i < topStudents.size() - 1; i++) {
             Assert.isTrue(
                 topStudents[i].Score__c >= topStudents[i + 1].Score__c,
