@@ -1,18 +1,20 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Internship Test
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Tasks completed in this project: A and B
 
-## How Do You Plan to Deploy Your Changes?
+## Task A: Create Book object and trigger
+Related components: BookTrigger, BookTriggerHelper, BookTriggerTest
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- Created custom object 'Book__c' with fields 'Title', 'Price', 'Quantity', 'Available'
+- Created trigger 'BookTrigger' before Insert and Update operations
+- Created 'BookTriggerHelper' class as an implementation of helper pattern (replaced trigger logic to helper)
+- Created 'BookTriggerTest' to test trigger on both insert and update operations. Reached 100% coverage
+![alt text](image.png)
 
-## Configure Your Salesforce DX Project
+## Task B: Create controller class with SOQL queries
+Related components: StudentController, StudentControllerTest
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- Created custom class 'Student' with fields 'Name', 'Score' and 'Grade' (considered 'Grade' as literal grade based on score (e.g. F, D, C...))
+- Created StudentController class with methods 'getStudents()' and 'getTopStudents(Integer studentsNumber)'
+- Created 'StudentControllerTest' to test both methods of controller and used @TestSetup to setup test data before tests. Reached 100% coverage
+![alt text](image-1.png)
